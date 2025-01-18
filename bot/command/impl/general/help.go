@@ -2,7 +2,6 @@ package general
 
 import (
 	"github.com/TicketsBot/common/permission"
-	"github.com/TicketsBot/common/premium"
 	"github.com/TicketsBot/worker/bot/command"
 	"github.com/TicketsBot/worker/bot/command/registry"
 	"github.com/TicketsBot/worker/bot/customisation"
