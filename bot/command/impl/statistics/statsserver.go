@@ -138,7 +138,7 @@ func (StatsServerCommand) Execute(ctx registry.CommandContext) {
 
 	if err := group.Wait(); err != nil {
 		ctx.HandleError(err)
-		return
+		//return
 	}
 
 	span = sentry.StartSpan(span.Context(), "Send Message")
