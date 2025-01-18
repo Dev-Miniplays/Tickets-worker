@@ -60,10 +60,6 @@ func SendWelcomeMessage(
 			formAnswersEmbed.AddField(field.Name, utils.EscapeMarkdown(field.Value), field.Inline)
 		}
 
-		if cmd.PremiumTier() == premium.None {
-			formAnswersEmbed.SetFooter("Powered by ticketsbot.net", "https://tickets.miniplays.de/assets/img/logo.png")
-		}
-
 		embeds = append(embeds, formAnswersEmbed)
 	}
 
@@ -574,12 +570,6 @@ func BuildCustomEmbed(
 		Url:         utils.ValueOrZero(customEmbed.Url),
 		Timestamp:   customEmbed.Timestamp,
 		Color:       int(customEmbed.Colour),
-	}
-
-	if branding {
-		e.SetFooter("Powered by ticketsbot.net", "https://tickets.miniplays.de/assets/img/logo.png")
-	} else if customEmbed.FooterText != nil {
-		e.SetFooter(*customEmbed.FooterText, utils.ValueOrZero(customEmbed.FooterIconUrl))
 	}
 
 	if customEmbed.ImageUrl != nil {

@@ -1063,15 +1063,15 @@ func buildJoinThreadMessage(
 		panelName = panel.ButtonLabel
 	}
 
-	title := "Join Ticket"
+	title := "Ticket Beitreten"
 	if fromReopen {
-		title = "Ticket Reopened"
+		title = "Ticket wieder Geöffnet"
 	}
 
-	e := utils.BuildEmbedRaw(customisation.GetColourOrDefault(ctx, guildId, colour), title, "A ticket has been opened. Press the button below to join it.", nil, premiumTier)
-	e.AddField(customisation.PrefixWithEmoji("Opened By", customisation.EmojiOpen, !worker.IsWhitelabel), customisation.PrefixWithEmoji(fmt.Sprintf("<@%d>", openerId), customisation.EmojiBulletLine, !worker.IsWhitelabel), true)
+	e := utils.BuildEmbedRaw(customisation.GetColourOrDefault(ctx, guildId, colour), title, "Ein Ticket wurde geöffnet. Drücke den Knopf unten um dem Ticket beizutreten.", nil, premiumTier)
+	e.AddField(customisation.PrefixWithEmoji("Geöffnet von", customisation.EmojiOpen, !worker.IsWhitelabel), customisation.PrefixWithEmoji(fmt.Sprintf("<@%d>", openerId), customisation.EmojiBulletLine, !worker.IsWhitelabel), true)
 	e.AddField(customisation.PrefixWithEmoji("Panel", customisation.EmojiPanel, !worker.IsWhitelabel), customisation.PrefixWithEmoji(panelName, customisation.EmojiBulletLine, !worker.IsWhitelabel), true)
-	e.AddField(customisation.PrefixWithEmoji("Staff In Ticket", customisation.EmojiStaff, !worker.IsWhitelabel), customisation.PrefixWithEmoji(strconv.Itoa(len(staffMembers)), customisation.EmojiBulletLine, !worker.IsWhitelabel), true)
+	e.AddField(customisation.PrefixWithEmoji("Teammitglieder im Ticket", customisation.EmojiStaff, !worker.IsWhitelabel), customisation.PrefixWithEmoji(strconv.Itoa(len(staffMembers)), customisation.EmojiBulletLine, !worker.IsWhitelabel), true)
 
 	if len(staffMembers) > 0 {
 		var mentions []string // dynamic length
@@ -1087,14 +1087,14 @@ func buildJoinThreadMessage(
 			charCount += len(mention) + 1 // +1 for space
 		}
 
-		e.AddField(customisation.PrefixWithEmoji("Staff Members", customisation.EmojiStaff, !worker.IsWhitelabel), customisation.PrefixWithEmoji(strings.Join(mentions, " "), customisation.EmojiBulletLine, !worker.IsWhitelabel), false)
+		e.AddField(customisation.PrefixWithEmoji("Teammitglieder", customisation.EmojiStaff, !worker.IsWhitelabel), customisation.PrefixWithEmoji(strings.Join(mentions, " "), customisation.EmojiBulletLine, !worker.IsWhitelabel), false)
 	}
 
 	return command.MessageResponse{
 		Embeds: utils.Slice(e),
 		Components: utils.Slice(component.BuildActionRow(
 			component.BuildButton(component.Button{
-				Label:    "Join Ticket",
+				Label:    "Ticket Betreten",
 				CustomId: fmt.Sprintf("join_thread_%d", ticketId),
 				Style:    component.ButtonStylePrimary,
 				Emoji:    utils.BuildEmoji("➕"),

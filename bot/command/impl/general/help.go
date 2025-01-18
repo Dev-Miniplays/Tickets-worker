@@ -123,10 +123,6 @@ func (c HelpCommand) Execute(ctx registry.CommandContext) {
 		}
 	}
 
-	if ctx.PremiumTier() == premium.None {
-		embed.SetFooter("Powered by ticketsbot.net", "https://tickets.miniplays.de/assets/img/logo.png")
-	}
-
 	// Explicitly ignore error to fix 403 (Cannot send messages to this user)
 	_, _ = ctx.ReplyWith(command.NewEphemeralEmbedMessageResponse(embed))
 }

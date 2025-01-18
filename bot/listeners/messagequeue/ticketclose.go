@@ -29,7 +29,7 @@ func ListenTicketClose() {
 			defer cancel()
 
 			if payload.Reason == "" {
-				payload.Reason = "No reason specified"
+				payload.Reason = "Kein Grund angegeben"
 			}
 
 			// Get the ticket struct

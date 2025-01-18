@@ -29,10 +29,6 @@ func BuildEmbed(
 		msgEmbed.AddField(field.Name, field.Value, field.Inline)
 	}
 
-	if ctx.PremiumTier() == premium.None {
-		msgEmbed.SetFooter("Powered by ticketsbot.net", "https://tickets.miniplays.de/assets/img/logo.png")
-	}
-
 	return msgEmbed
 }
 
@@ -46,10 +42,6 @@ func BuildEmbedRaw(
 
 	for _, field := range fields {
 		msgEmbed.AddField(field.Name, field.Value, field.Inline)
-	}
-
-	if tier == premium.None {
-		msgEmbed.SetFooter("Powered by ticketsbot.net", "https://tickets.miniplays.de/assets/img/logo.png")
 	}
 
 	return msgEmbed
