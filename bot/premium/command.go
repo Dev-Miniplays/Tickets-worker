@@ -2,19 +2,20 @@ package premium
 
 import (
 	"fmt"
+	"strings"
+
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/command"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/command/registry"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/customisation"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/dbclient"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/utils"
+	"github.com/Dev-Miniplays/Tickets-Worker/config"
+	"github.com/Dev-Miniplays/Tickets-Worker/i18n"
 	"github.com/TicketsBot/common/model"
 	"github.com/TicketsBot/database"
-	"github.com/TicketsBot/worker/bot/command"
-	"github.com/TicketsBot/worker/bot/command/registry"
-	"github.com/TicketsBot/worker/bot/customisation"
-	"github.com/TicketsBot/worker/bot/dbclient"
-	"github.com/TicketsBot/worker/bot/utils"
-	"github.com/TicketsBot/worker/config"
-	"github.com/TicketsBot/worker/i18n"
 	"github.com/jackc/pgx/v4"
 	"github.com/rxdn/gdl/objects/interaction"
 	"github.com/rxdn/gdl/objects/interaction/component"
-	"strings"
 )
 
 const PremiumStoreSku uint64 = 1274473638065606656

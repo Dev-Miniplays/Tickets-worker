@@ -1,4 +1,4 @@
-module github.com/TicketsBot/worker
+module github.com/Dev-Miniplays/Tickets-Worker
 
 go 1.22
 

@@ -2,10 +2,11 @@ package messagequeue
 
 import (
 	"context"
+
+	"github.com/Dev-Miniplays/Tickets-Worker"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/dbclient"
+	"github.com/Dev-Miniplays/Tickets-Worker/config"
 	"github.com/TicketsBot/database"
-	"github.com/TicketsBot/worker"
-	"github.com/TicketsBot/worker/bot/dbclient"
-	"github.com/TicketsBot/worker/config"
 	"github.com/rxdn/gdl/cache"
 )
 

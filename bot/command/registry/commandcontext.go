@@ -1,14 +1,14 @@
 package registry
 
 import (
+	worker "github.com/Dev-Miniplays/Tickets-Worker"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/command"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/customisation"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/errorcontext"
+	"github.com/Dev-Miniplays/Tickets-Worker/i18n"
 	permcache "github.com/TicketsBot/common/permission"
 	"github.com/TicketsBot/common/premium"
 	"github.com/TicketsBot/database"
-	"github.com/TicketsBot/worker"
-	"github.com/TicketsBot/worker/bot/command"
-	"github.com/TicketsBot/worker/bot/customisation"
-	"github.com/TicketsBot/worker/bot/errorcontext"
-	"github.com/TicketsBot/worker/i18n"
 	"github.com/rxdn/gdl/objects/channel"
 	"github.com/rxdn/gdl/objects/channel/embed"
 	"github.com/rxdn/gdl/objects/channel/message"

@@ -1,9 +1,9 @@
 package manager
 
 import (
-	"github.com/TicketsBot/worker/bot/button/handlers"
-	"github.com/TicketsBot/worker/bot/button/registry"
-	"github.com/TicketsBot/worker/bot/button/registry/matcher"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/button/handlers"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/button/registry"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/button/registry/matcher"
 )
 
 type ComponentInteractionManager struct {

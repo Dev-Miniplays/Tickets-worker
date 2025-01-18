@@ -3,9 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/TicketsBot/worker/bot/dbclient"
-	"github.com/TicketsBot/worker/i18n"
 	"io/ioutil"
+
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/dbclient"
+	"github.com/Dev-Miniplays/Tickets-Worker/i18n"
 )
 
 func main() {

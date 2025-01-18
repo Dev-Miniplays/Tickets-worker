@@ -2,7 +2,8 @@ package button
 
 import (
 	"errors"
-	"github.com/TicketsBot/worker"
+
+	"github.com/Dev-Miniplays/Tickets-Worker"
 	"github.com/rxdn/gdl/objects/interaction"
 )
 

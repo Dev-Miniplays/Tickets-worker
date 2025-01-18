@@ -1,18 +1,19 @@
 package tickets
 
 import (
+	"time"
+
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/command"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/command/registry"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/customisation"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/dbclient"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/logic"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/utils"
+	"github.com/Dev-Miniplays/Tickets-Worker/i18n"
 	permcache "github.com/TicketsBot/common/permission"
-	"github.com/TicketsBot/worker/bot/command"
-	"github.com/TicketsBot/worker/bot/command/registry"
-	"github.com/TicketsBot/worker/bot/customisation"
-	"github.com/TicketsBot/worker/bot/dbclient"
-	"github.com/TicketsBot/worker/bot/logic"
-	"github.com/TicketsBot/worker/bot/utils"
-	"github.com/TicketsBot/worker/i18n"
 	"github.com/rxdn/gdl/objects/channel"
 	"github.com/rxdn/gdl/objects/interaction"
 	"github.com/rxdn/gdl/permission"
-	"time"
 )
 
 type RemoveCommand struct {

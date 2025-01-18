@@ -2,17 +2,18 @@ package listeners
 
 import (
 	"context"
+	"time"
+
+	"github.com/Dev-Miniplays/Tickets-Worker"
+	cmdcontext "github.com/Dev-Miniplays/Tickets-Worker/bot/command/context"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/constants"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/dbclient"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/listeners/messagequeue"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/logic"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/utils"
 	"github.com/TicketsBot/common/sentry"
-	"github.com/TicketsBot/worker"
-	cmdcontext "github.com/TicketsBot/worker/bot/command/context"
-	"github.com/TicketsBot/worker/bot/constants"
-	"github.com/TicketsBot/worker/bot/dbclient"
-	"github.com/TicketsBot/worker/bot/listeners/messagequeue"
-	"github.com/TicketsBot/worker/bot/logic"
-	"github.com/TicketsBot/worker/bot/utils"
 	"github.com/rxdn/gdl/gateway/payloads/events"
 	gdlUtils "github.com/rxdn/gdl/utils"
-	"time"
 )
 
 // Remove user permissions when they leave

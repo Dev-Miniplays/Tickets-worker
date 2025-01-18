@@ -4,9 +4,10 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/TicketsBot/worker"
-	"github.com/TicketsBot/worker/bot/listeners"
-	"github.com/TicketsBot/worker/bot/metrics/prometheus"
+
+	"github.com/Dev-Miniplays/Tickets-Worker"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/listeners"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/metrics/prometheus"
 	"github.com/getsentry/sentry-go"
 	"github.com/rxdn/gdl/gateway/payloads"
 )

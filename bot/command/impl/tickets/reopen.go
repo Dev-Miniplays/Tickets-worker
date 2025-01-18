@@ -2,16 +2,17 @@ package tickets
 
 import (
 	"context"
-	"github.com/TicketsBot/common/permission"
-	"github.com/TicketsBot/common/sentry"
-	"github.com/TicketsBot/worker/bot/command"
-	"github.com/TicketsBot/worker/bot/command/registry"
-	"github.com/TicketsBot/worker/bot/dbclient"
-	"github.com/TicketsBot/worker/bot/logic"
-	"github.com/TicketsBot/worker/i18n"
-	"github.com/rxdn/gdl/objects/interaction"
 	"strconv"
 	"time"
+
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/command"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/command/registry"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/dbclient"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/logic"
+	"github.com/Dev-Miniplays/Tickets-Worker/i18n"
+	"github.com/TicketsBot/common/permission"
+	"github.com/TicketsBot/common/sentry"
+	"github.com/rxdn/gdl/objects/interaction"
 )
 
 type ReopenCommand struct {

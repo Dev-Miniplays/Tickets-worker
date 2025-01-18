@@ -2,11 +2,12 @@ package listeners
 
 import (
 	"context"
-	"github.com/TicketsBot/common/sentry"
-	"github.com/TicketsBot/worker"
-	"github.com/TicketsBot/worker/bot/utils"
-	"github.com/rxdn/gdl/gateway/payloads/events"
 	"time"
+
+	"github.com/Dev-Miniplays/Tickets-Worker"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/utils"
+	"github.com/TicketsBot/common/sentry"
+	"github.com/rxdn/gdl/gateway/payloads/events"
 )
 
 // Remove user permissions when they leave

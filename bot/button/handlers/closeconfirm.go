@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	"github.com/TicketsBot/worker/bot/button/registry"
-	"github.com/TicketsBot/worker/bot/button/registry/matcher"
-	"github.com/TicketsBot/worker/bot/command/context"
-	"github.com/TicketsBot/worker/bot/constants"
-	"github.com/TicketsBot/worker/bot/logic"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/button/registry"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/button/registry/matcher"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/command/context"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/constants"
+	"github.com/Dev-Miniplays/Tickets-Worker/bot/logic"
 )
 
 type CloseConfirmHandler struct{}
