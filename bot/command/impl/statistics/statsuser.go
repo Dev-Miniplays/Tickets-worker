@@ -2,6 +2,9 @@ package statistics
 
 import (
 	"fmt"
+	"strconv"
+	"time"
+
 	"github.com/TicketsBot/common/permission"
 	"github.com/TicketsBot/worker/bot/command"
 	"github.com/TicketsBot/worker/bot/command/registry"
@@ -13,8 +16,6 @@ import (
 	"github.com/rxdn/gdl/objects/channel/embed"
 	"github.com/rxdn/gdl/objects/interaction"
 	"golang.org/x/sync/errgroup"
-	"strconv"
-	"time"
 )
 
 type StatsUserCommand struct {
@@ -114,14 +115,14 @@ func (StatsUserCommand) Execute(ctx registry.CommandContext, userId uint64) {
 		span := sentry.StartSpan(span.Context(), "Reply")
 
 		msgEmbed := embed.NewEmbed().
-			SetTitle("Statistics").
+			SetTitle("Statistiken").
 			SetColor(ctx.GetColour(customisation.Green)).
 			SetAuthor(member.User.Username, "", member.User.AvatarUrl(256)).
-			AddField("Permission Level", "Regular", true).
-			AddField("Is Blacklisted", strconv.FormatBool(isBlacklisted), true).
+			AddField("Rechte", "Regular", true).
+			AddField("Auf Blacklist?", strconv.FormatBool(isBlacklisted), true).
 			AddBlankField(true).
-			AddField("Total Tickets", strconv.Itoa(totalTickets), true).
-			AddField("Open Tickets", fmt.Sprintf("%d / %d", openTickets, ticketLimit), true)
+			AddField("Gesamtanzahl Tickets", strconv.Itoa(totalTickets), true).
+			AddField("Aktuell offene Tickets", fmt.Sprintf("%d / %d", openTickets, ticketLimit), true)
 
 		_, _ = ctx.ReplyWith(command.NewEphemeralEmbedMessageResponse(msgEmbed))
 		span.Finish()
@@ -275,21 +276,21 @@ func (StatsUserCommand) Execute(ctx registry.CommandContext, userId uint64) {
 		span := sentry.StartSpan(span.Context(), "Reply")
 
 		msgEmbed := embed.NewEmbed().
-			SetTitle("Statistics").
+			SetTitle("Statistiken").
 			SetColor(ctx.GetColour(customisation.Green)).
 			SetAuthor(member.User.Username, "", member.User.AvatarUrl(256)).
-			AddField("Permission Level", permissionLevel, true).
-			AddField("Feedback Rating", fmt.Sprintf("%.1f / 5 ⭐ (%d ratings)", feedbackRating, feedbackCount), true).
+			AddField("Rechte", permissionLevel, true).
+			AddField("Feedback", fmt.Sprintf("%.1f / 5 ⭐ (%d ratings)", feedbackRating, feedbackCount), true).
 			AddBlankField(true).
-			AddField("Average First Response Time (Weekly)", formatNullableTime(weeklyAR), true).
-			AddField("Average First Response Time (Monthly)", formatNullableTime(monthlyAR), true).
-			AddField("Average First Response Time (Total)", formatNullableTime(totalAR), true).
-			AddField("Tickets Answered (Weekly)", fmt.Sprintf("%d / %d", weeklyAnsweredTickets, weeklyTotalTickets), true).
-			AddField("Tickets Answered (Monthly)", fmt.Sprintf("%d / %d", monthlyAnsweredTickets, monthlyTotalTickets), true).
-			AddField("Tickets Answered (Total)", fmt.Sprintf("%d / %d", totalAnsweredTickets, totalTotalTickets), true).
-			AddField("Claimed Tickets (Weekly)", strconv.Itoa(weeklyClaimedTickets), true).
-			AddField("Claimed Tickets (Monthly)", strconv.Itoa(monthlyClaimedTickets), true).
-			AddField("Claimed Tickets (Total)", strconv.Itoa(totalClaimedTickets), true)
+			AddField("Zeit bis zur ersten Antwort (Wöchentlich)", formatNullableTime(weeklyAR), true).
+			AddField("Zeit bis zur ersten Antwort (Monatlich)", formatNullableTime(monthlyAR), true).
+			AddField("Zeit bis zur ersten Antwort (Insgesammt)", formatNullableTime(totalAR), true).
+			AddField("Tickets Beantwortet (Wöchentlich)", fmt.Sprintf("%d / %d", weeklyAnsweredTickets, weeklyTotalTickets), true).
+			AddField("Tickets Beantwortet (Monatlich)", fmt.Sprintf("%d / %d", monthlyAnsweredTickets, monthlyTotalTickets), true).
+			AddField("Tickets Beantwortet (Insgesammt)", fmt.Sprintf("%d / %d", totalAnsweredTickets, totalTotalTickets), true).
+			AddField("Beanspruchte Tickets (Wöchentlich)", strconv.Itoa(weeklyClaimedTickets), true).
+			AddField("Beanspruchte Tickets (Monatlich)", strconv.Itoa(monthlyClaimedTickets), true).
+			AddField("Beanspruchte Tickets (Insgesammt)", strconv.Itoa(totalClaimedTickets), true)
 
 		_, _ = ctx.ReplyWith(command.NewEphemeralEmbedMessageResponse(msgEmbed))
 		span.Finish()
