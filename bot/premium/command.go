@@ -88,7 +88,7 @@ func BuildPatreonSubscriptionFoundMessage(ctx registry.CommandContext, legacyEnt
 				Label: ctx.GetMessage(i18n.MessagePremiumOpenServerSelector),
 				Style: component.ButtonStyleLink,
 				Emoji: utils.BuildEmoji("🔗"),
-				Url:   utils.Ptr("https://dashboard.ticketsbot.net/premium/select-servers"),
+				Url:   utils.Ptr("https://ticketsdashboard.miniplays.de/premium/select-servers"),
 			}),
 			component.BuildButton(component.Button{
 				Label:    ctx.GetMessage(i18n.MessagePremiumCheckAgain),
