@@ -120,6 +120,7 @@ func (StatsServerCommand) Execute(ctx registry.CommandContext) {
 
 		counts, err := dbclient.Analytics.GetLastNTicketsPerDayGuild(ctx, ctx.GuildId(), 7)
 		if err != nil {
+			ctx.ReplyPlainPermanent("error")
 			return err
 		}
 
@@ -137,8 +138,8 @@ func (StatsServerCommand) Execute(ctx registry.CommandContext) {
 	})
 
 	if err := group.Wait(); err != nil {
-		ctx.HandleError(err)
-		//return
+		//ctx.HandleError(err)
+		return
 	}
 
 	span = sentry.StartSpan(span.Context(), "Send Message")
