@@ -120,7 +120,6 @@ func (StatsServerCommand) Execute(ctx registry.CommandContext) {
 
 		counts, err := dbclient.Analytics.GetLastNTicketsPerDayGuild(ctx, ctx.GuildId(), 7)
 		if err != nil {
-			ctx.ReplyPlainPermanent("error")
 			return err
 		}
 
