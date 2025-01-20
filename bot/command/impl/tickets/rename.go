@@ -27,7 +27,7 @@ func (RenameCommand) Properties() registry.Properties {
 		PermissionLevel: permission.Support,
 		Category:        command.Tickets,
 		Arguments: command.Arguments(
-			command.NewRequiredArgument("name", "New name for the ticket", interaction.OptionTypeString, i18n.MessageRenameMissingName),
+			command.NewRequiredArgument("name", "Neuer Name für das Ticket", interaction.OptionTypeString, i18n.MessageRenameMissingName),
 		),
 		DefaultEphemeral: true,
 		Timeout:          time.Second * 5,

@@ -27,7 +27,7 @@ func (AddAdminCommand) Properties() registry.Properties {
 		Category:        command.Settings,
 		InteractionOnly: true,
 		Arguments: command.Arguments(
-			command.NewRequiredArgument("user_or_role", "User or role to apply the administrator permission to", interaction.OptionTypeMentionable, i18n.MessageAddAdminNoMembers),
+			command.NewRequiredArgument("user_or_role", "Bentuzer oder Rolle der Administrator Rechte für diesen Bot auf diesem Server gegeben werden sollen", interaction.OptionTypeMentionable, i18n.MessageAddAdminNoMembers),
 		),
 		DefaultEphemeral: true,
 		Timeout:          time.Second * 3,

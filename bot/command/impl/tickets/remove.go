@@ -27,7 +27,7 @@ func (RemoveCommand) Properties() registry.Properties {
 		PermissionLevel: permcache.Everyone,
 		Category:        command.Tickets,
 		Arguments: command.Arguments(
-			command.NewRequiredArgument("user", "User to remove from the current ticket", interaction.OptionTypeUser, i18n.MessageRemoveAdminNoMembers),
+			command.NewRequiredArgument("user", "Benutzer der vom aktuellen Ticket entfernt werden soll", interaction.OptionTypeUser, i18n.MessageRemoveAdminNoMembers),
 		),
 		Timeout: time.Second * 8,
 	}

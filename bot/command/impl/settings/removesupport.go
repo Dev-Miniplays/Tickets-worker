@@ -29,7 +29,7 @@ func (RemoveSupportCommand) Properties() registry.Properties {
 		PermissionLevel: permcache.Admin,
 		Category:        command.Settings,
 		Arguments: command.Arguments(
-			command.NewRequiredArgument("user_or_role", "User or role to remove the support representative permission from", interaction.OptionTypeMentionable, i18n.MessageRemoveSupportNoMembers),
+			command.NewRequiredArgument("user_or_role", "Rolle der Supporter Rechte entfernt werden", interaction.OptionTypeMentionable, i18n.MessageRemoveSupportNoMembers),
 		),
 		DefaultEphemeral: true,
 		Timeout:          time.Second * 5,

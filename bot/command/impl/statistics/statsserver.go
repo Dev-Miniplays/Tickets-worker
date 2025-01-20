@@ -137,7 +137,7 @@ func (StatsServerCommand) Execute(ctx registry.CommandContext) {
 	})
 
 	if err := group.Wait(); err != nil {
-		//ctx.HandleError(err)
+		ctx.HandleError(err)
 		return
 	}
 

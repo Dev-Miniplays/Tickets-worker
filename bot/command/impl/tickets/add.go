@@ -24,7 +24,7 @@ func (AddCommand) Properties() registry.Properties {
 		PermissionLevel: permcache.Everyone,
 		Category:        command.Tickets,
 		Arguments: command.Arguments(
-			command.NewRequiredArgument("user", "User to add to the ticket", interaction.OptionTypeUser, i18n.MessageAddNoMembers),
+			command.NewRequiredArgument("user", "Benutzer der zum Ticket hinzugefügt werden soll", interaction.OptionTypeUser, i18n.MessageAddNoMembers),
 		),
 		Timeout: constants.TimeoutOpenTicket,
 	}

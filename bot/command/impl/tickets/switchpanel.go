@@ -36,7 +36,7 @@ func (c SwitchPanelCommand) Properties() registry.Properties {
 		Category:        command.Tickets,
 		InteractionOnly: true,
 		Arguments: command.Arguments(
-			command.NewRequiredAutocompleteableArgument("panel", "Ticket panel to switch the ticket to", interaction.OptionTypeInteger, i18n.MessageInvalidUser, c.AutoCompleteHandler), // TODO: Fix invalid message
+			command.NewRequiredAutocompleteableArgument("panel", "Ticket panel zu dem das Ticket gewechselt werden soll", interaction.OptionTypeInteger, i18n.MessageInvalidUser, c.AutoCompleteHandler), // TODO: Fix invalid message
 		),
 		Timeout: constants.TimeoutOpenTicket,
 	}

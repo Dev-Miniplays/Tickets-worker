@@ -24,7 +24,7 @@ func (OpenCommand) Properties() registry.Properties {
 		PermissionLevel: permission.Everyone,
 		Category:        command.Tickets,
 		Arguments: command.Arguments(
-			command.NewOptionalArgument("subject", "The subject of the ticket", interaction.OptionTypeString, "infallible"),
+			command.NewOptionalArgument("subject", "Der Grund des Tickets", interaction.OptionTypeString, "infallible"),
 		),
 		DefaultEphemeral: true,
 		Timeout:          constants.TimeoutOpenTicket,

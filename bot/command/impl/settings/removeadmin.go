@@ -28,7 +28,7 @@ func (RemoveAdminCommand) Properties() registry.Properties {
 		PermissionLevel: permcache.Admin,
 		Category:        command.Settings,
 		Arguments: command.Arguments(
-			command.NewRequiredArgument("user_or_role", "User or role to remove the administrator permission from", interaction.OptionTypeMentionable, i18n.MessageRemoveAdminNoMembers),
+			command.NewRequiredArgument("user_or_role", "Bentuzer oder Rolle der Administrator Rechte für diesen Bot auf diesem Server entfernt werden sollen", interaction.OptionTypeMentionable, i18n.MessageRemoveAdminNoMembers),
 		),
 		DefaultEphemeral: true,
 		Timeout:          time.Second * 5,

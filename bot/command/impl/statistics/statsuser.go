@@ -31,7 +31,7 @@ func (StatsUserCommand) Properties() registry.Properties {
 		Category:        command.Statistics,
 		PremiumOnly:     true,
 		Arguments: command.Arguments(
-			command.NewRequiredArgument("user", "User whose statistics to retrieve", interaction.OptionTypeUser, i18n.MessageInvalidUser),
+			command.NewRequiredArgument("user", "Benutzer für den die Statistiken abgerufen werden", interaction.OptionTypeUser, i18n.MessageInvalidUser),
 		),
 		DefaultEphemeral: true,
 		Timeout:          time.Second * 30,
