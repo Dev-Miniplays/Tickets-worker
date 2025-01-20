@@ -12,12 +12,12 @@ type Locale struct {
 }
 
 var LocaleEnglish = &Locale{
-	IsoShortCode:  "en",
-	IsoLongCode:   "en-GB",
-	FlagEmoji:     "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-	EnglishName:   "English",
-	LocalName:     "English",
-	DiscordLocale: ptr("en-US"),
+	IsoShortCode:  "de",
+	IsoLongCode:   "de-DE",
+	FlagEmoji:     "🇩🇪",
+	EnglishName:   "German",
+	LocalName:     "Deutsch",
+	DiscordLocale: ptr("de"),
 }
 
 var Locales = []*Locale{
@@ -69,14 +69,7 @@ var Locales = []*Locale{
 		LocalName:     "Dansk",
 		DiscordLocale: ptr("da"),
 	},
-	{
-		IsoShortCode:  "de",
-		IsoLongCode:   "de-DE",
-		FlagEmoji:     "🇩🇪",
-		EnglishName:   "German",
-		LocalName:     "Deutsch",
-		DiscordLocale: ptr("de"),
-	},
+	LocaleEnglish, // (Changed to German)
 	{
 		IsoShortCode:  "el",
 		IsoLongCode:   "el-GR",
@@ -85,7 +78,14 @@ var Locales = []*Locale{
 		LocalName:     "Ελληνικά",
 		DiscordLocale: ptr("el"),
 	},
-	LocaleEnglish,
+	{
+		IsoShortCode:  "en",
+		IsoLongCode:   "en-GB",
+		FlagEmoji:     "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+		EnglishName:   "English",
+		LocalName:     "English",
+		DiscordLocale: ptr("en-US"),
+	},
 	{
 		IsoShortCode:  "eo",
 		IsoLongCode:   "eo-UY",
